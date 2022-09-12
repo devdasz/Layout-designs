@@ -12,14 +12,14 @@
 <body>
     <!-- Every section is made with rows -->
     <!-- Main container - greay area -->
-    <div class="container-fluid  px-lg-5 px-3 pt-3 pb-3" style="background-color:#D9D9D9">
+    <div class="container-fluid  px-lg-5 px-2 pt-lg-3 pt-1 pb-3" style="background-color:#D9D9D9">
 
         <!-- Upper left button area -->
         <div class="row mt-2">
             <div class="col-4 col-lg-3 ms-lg-0 ms-3">
                 <button class="btn " style="background-color: #c47171;" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list text-white" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                       </svg>
                     
@@ -65,7 +65,11 @@
         
         <!-- Close button -->
         <div class="text-end" style="height: 35px;">
-            <button type="button" class="btn-close m-2" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn  " data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-x-lg text-white" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                  </svg>
+            </button>
         </div>
 
         <!-- Some block -->
@@ -78,6 +82,12 @@
         <div class="w-75 mx-auto my-2" style="background-color:#BDBDBD; height:60px ; "> </div>
         <div class="w-75 mx-auto my-2" style="background-color:#BDBDBD; height:60px ; "> </div>
         <div class="divider bg-white"><hr></div>
+
+        <button type="button" class="btn bg-dark btn-lg d-block mx-auto" id="btn-back-to-top" style="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle text-white" viewBox="0 0 16 16">
+                <path  fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+              </svg>
+          </button>
     </div>
 
 
