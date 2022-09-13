@@ -12,6 +12,7 @@
             --primaryColor: #001947;
             /* --secondarColor:; */
             --fontColor: #FFFFFF;
+            --fontColorOffset:rgb(255 255 255 / 50%);
         }
 
         /* by default backdrop takes full screen, modifying to make sure navbar is clear */
@@ -54,7 +55,7 @@
             </button>
 
             <!-- Site logo/ name. It will show in all screen -->
-            <a class="navbar-brand " style="color:var(--fontColor)" href="#">Sphaere</a>
+            <a class="navbar-brand " style="color:var(--fontColor)" href="#"> <img class="img-fluid" src="./assets/logo.svg" alt="company logo" srcset=""></a>
 
             <!-- Sidebar  -->
             <div class="offcanvas offcanvas-start " tabindex="-1" id="navbarOffcanvasLg"
@@ -156,7 +157,67 @@
         </div>
     </div>
 
+    <!-- Footer -->
+    <div class="container-fluid " style="background-color: var(--primaryColor); color: var(--fontColorOffset);">
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-lg-3 text-center my-5">
+            <img class="opacity-50 " style="height: 80px ;" src="./assets/logo.svg" alt="" srcset="">
+            <div class="mt-5 d-lg-none">
+                <a class="text-decoration-none m-3" href="">
 
+                    <img src="./assets/facebook.svg" alt="facebook" srcset="">
+                </a>
+
+                <a class="text-decoration-none m-3" href="">
+
+                    <img src="./assets/instagram.svg" alt="facebook" srcset="">
+                </a>
+            </div>
+            </div>
+            <hr class="d-lg-none">
+            <div class="col-12 col-lg-3 text-center text-lg-start my-5">
+                <h3 class="mb-5">Contact</h3>
+                <p class="mb-4"><small> info@sphaere B.V.</small> </p>
+                
+                <p class="my-2"><small> Spaarndammerstraat 53-1 </small></p>
+                <p class="my-2"><small> Amsterdam 1013TA </small> </p>
+                <p class="my-2"><small> The Netherlamds </small></p>
+            </div>
+            <hr class="d-lg-none">
+            <div class="col-12 col-lg-3 text-center text-lg-start my-5">
+               <h3 class="mb-5">Need help</h3>
+               <p class="">QUALITY AND WARRANTY</p>
+               <P class="my-4">DELIVERY</P>
+               <P class="my-4">TERMS OF USE</P>
+               <P class="my-4">PRIVACY POLICY</P>
+               <P class="my-4">CODE OF CONDUCT</P>
+               <P class="my-4">CONTACT US</P>
+            </div>
+            
+            <div class="col-12 col-lg-3 text-center my-5 d-none d-lg-block">
+                <h3 class="mb-5">Social</h3>
+                    <div class=" d-none d-lg-block">
+                        <a class="text-decoration-none mx-2" href="">
+        
+                            <img src="./assets/facebook.svg" alt="facebook" srcset="">
+                        </a>
+        
+                        <a class="text-decoration-none mx-2" href="">
+        
+                            <img src="./assets/instagram.svg" alt="facebook" srcset="">
+                        </a>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="d-flex justify-content-center flex-wrap">
+            <p class="mx-2">&copy 2020 Sphare.net All Right Reserved</p>
+            <p class="mx-2">Gemeente overlast: 204214567</p>
+            <p class="mx-2">KvK: 78264286</p>
+            <p class="mx-2">Vestigings:45906254</p>
+            <p class="mx-2">VAT: NL861323282B01</p>
+        </div>
+    </div>
 
 
 
