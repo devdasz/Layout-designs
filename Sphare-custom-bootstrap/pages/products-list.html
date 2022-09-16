@@ -1,0 +1,410 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphaere</title>
+    <link rel="stylesheet" href="../assets/css/custom_bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
+    <!-- custom css to modify bootstrap -->
+    <style>
+        :root {
+            --primaryColor: #001947;
+            /* --secondarColor:; */
+            --fontColor: #FFFFFF;
+            --fontColorOffset: rgb(255 255 255 / 50%);
+        }
+
+        /* by default backdrop takes full screen, modifying to make sure navbar is clear */
+        .offcanvas-backdrop {
+            top: 67px;
+
+        }
+
+        /* to hide the close icon at navbar. Dynamic property added by js(see at the end of body) */
+        #navbar-close-icon {
+            display: none;
+        }
+      
+
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+
+
+    <nav class="navbar navbar-expand-lg px-lg-4 bg-primary">
+        <!--Navbar items thats will not collapse  -->
+        <div class="container-fluid">
+            <!-- Navbar toggle button for the sidebar -->
+            <button class="navbar-toggler border-0 text-secondary" id="navbar-toggle-button" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+                <div class="btn text-secondary p-0 " id="navbar-toggle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </div>
+                <div class="btn text-secondary p-0" id="navbar-close-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                    </svg>
+                </div>
+
+            </button>
+
+            <!-- Site logo/ name. It will show in all screen -->
+            <a class="navbar-brand text-secondary " href="#"> <img class="img-fluid" src="../assets/icons/logo.svg"
+                    alt="company logo" srcset=""></a>
+
+            <!-- Sidebar  -->
+            <div class="offcanvas offcanvas-start bg-primary text-secondary" tabindex="-1" id="navbarOffcanvasLg"
+                aria-labelledby="navbarOffcanvasLgLabel" style="top: 56px; ">
+
+                <div class="offcanvas-body  justify-content-lg-end">
+                    <!-- Mock items  -->
+                    <a href=""
+                        class="d-none d-lg-inline  my-2 mx-lg-5  text-decoration-none text-secondary fw-light text-tre text-uppercase fs-5 border-0">Products</a>
+                    <a href=""
+                        class="d-block d-lg-none  my-2 mx-lg-2  text-decoration-none text-secondary fw-bolder  fs-5 border-0">Products</a>
+                    <div class="d-lg-none">
+
+                        <p class="fw-bolder fs-5">Need Help</p>
+                        <p class=""> <a class="text-decoration-none text-white-50" href="">QUALITY AND WARRANTY</a> </p>
+                        <P class="my-4"><a class="text-decoration-none text-white-50 " href="">DELIVERY</a></P>
+                        <P class="my-4"><a class="text-decoration-none text-white-50 " href="">TERMS OF USE</a></P>
+                        <P class="my-4"><a class="text-decoration-none text-white-50 " href="">PRIVACY POLICY</a></P>
+                        <P class="my-4"><a class="text-decoration-none text-white-50 " href="">CODE OF CONDUCT</a></P>
+                        <P class="my-4"><a class="text-decoration-none text-white-50 " href="">CONTACT US</a></P>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right side iteams(excluded from sidebar) -->
+            <div class="navbar-brand" href="#">
+
+                <!-- search item only to visible at desktop -->
+                <div class="d-none d-lg-inline-block">
+                    <!-- required form for seach. Same form will be use again below for mobile only screen -->
+                    <div class="input-group  border">
+                        <input type="text" class="form-control text-secondary bg-primary border-0 rounded-0"
+                            placeholder="Recipient's username" aria-label="Recipient's username"
+                            aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary border-0 rounded-0" type="button"
+                            id="button-addon2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-search " viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg></button>
+                    </div>
+                </div>
+
+                <!-- search icon  -->
+                <span class="px-1">
+
+                    <button class="navbar-toggler text-secondary border-0 " type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search " viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </button>
+                </span>
+
+                <span class=" px-1">
+                    <button class="bg-primary text-secondary border-0">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-cart2" viewBox="0 0 16 16">
+                            <path
+                                d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                        </svg>
+                    </button>
+                </span>
+
+            </div>
+        </div>
+        <!-- Collapse search portion only visible to mobile -->
+        <div class="w-100 my-2 collapse d-lg-none" id="navbarTogglerDemo02">
+            <div class="container-fluid">
+                <!-- Same form for search -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Products -->
+    <div class="container pt-5 px-4 text-primary">
+        <h2 class="text-uppercase text-primary mb-5">Facial Arts</h2>
+       
+     <!-- a product -->
+     <div class="row ">
+        <!--  -->
+     
+        <div class="col-12 col-lg-6 py-1 d-flex flex-column justify-content-center">
+
+
+            <p class="mx-lg-5 w-lg-50 px-lg-2"> <strong>The Facial Arts </strong> product range is characterized by ongoing product development and continuous feedback from users. </p>
+
+            <p class="mx-lg-5 w-lg-50 px-lg-2"> Our products stand out for their extremely good tolerability and ease of use for practitioners.</p>
+        </div>
+        <div class="col-12 col-lg-6 py-1 d-none d-lg-block">
+            <a href="" class="d-block">
+
+                <img class="img-fluid d-block mx-auto" src="../assets/images/Rectangle7.png"
+                    alt="Facial Arts image">
+            </a>
+
+        </div>
+     
+    </div>
+
+    </div>
+    
+<!-- Facial items -->
+   
+        <div class="container py-5 px-4 text-primary ">
+       
+          <div class="row ">
+            <!--a item -->
+            <div class="col-6 col-lg-3 py-1">
+              <a href="">
+    
+               <!-- image of item-->
+             <img src="../assets/images/packshot_produkt-maxface-2013_0.png"
+                  alt=""
+                  class="img-fluid mx-2"
+                  >
+              </a>
+              <p class="fw-bolder ">Maxface</p>
+              <p>Maxface
+
+                Maxface consists of cross-linked hyaluronic acid produced by a fermentation process...<strong> more</strong></p>
+            </div>
+              <!--a item -->
+              <div class="col-6 col-lg-3 py-1">
+                <a href="">
+      
+                 <!-- image of item-->
+               <img src="../assets/images/packshot_produkt-pearl-2013_1.png"
+                    alt=""
+                    class="img-fluid mx-2"
+                    >
+                </a>
+                <p class="fw-bolder ">Pearl</p>
+                <p>Maxface
+  
+                    Pearl
+
+                    Pearl is a skin boosting hyaluronic acid gel for an effective skin care and an intensive support of the rejuvenation of the face, décolleté and the cervical area...<strong> more</strong></p>
+              </div>
+         
+        
+                <!--a item -->
+                <div class="col-6 col-lg-3 py-1">
+                    <a href="">
+          
+                     <!-- image of item-->
+                   <img src="../assets/images/packshot_produkt-maxfacesoft-2013_0.png"
+                        alt=""
+                        class="img-fluid mx-2"
+                        >
+                    </a>
+                    <p class="fw-bolder ">Maxface soft</p>
+                    <p>
+
+                        Maxface soft is a fully hydrated dermal filler for 
+                        an efficient volumizing treatment....<strong> more</strong></p>
+                  </div>
+         
+        
+                <!--a item -->
+                <div class="col-6 col-lg-3 py-1">
+                    <a href="">
+          
+                     <!-- image of item-->
+                   <img src="../assets/images/packshot_produkt-maxfacesoft-2013_0.png"
+                        alt=""
+                        class="img-fluid mx-2"
+                        >
+                    </a>
+                    <p class="fw-bolder ">Inline</p>
+                    <p>
+
+                        Inline is an allround-filler for each kind of standard treatment...<strong> more</strong></p>
+                  </div>
+         
+          
+       
+        
+    
+    
+          </div>
+        </div>
+   
+
+
+  <!-- Satisfation area -->
+  <!-- this container is only for background color (it may be omitted for white background) -->
+  <div class="container-fluid ">
+    <!-- main container for margin and padding -->
+    <div class="container py-5 px-4 ">
+
+      <div class="row ">
+        <!-- a single item no 1 -->
+        <div class="col-6 col-lg-3 py-1">
+          <div class="d-block mx-auto my-3" style="width:fit-content ;" href="">
+
+            <img class="img-fluid" src="../assets/icons/check.svg" alt="check icon">
+          </div>
+          <p class="fw-bolder text-uppercase text-center mb-0">Scientifically
+          </p>
+          <p class="fw-bolder text-uppercase text-center">
+            reputable products</p>
+        </div>
+
+        <!-- a single item no 2-->
+        <div class="col-6 col-lg-3 py-1">
+          <div class="d-block mx-auto my-3" style="width:fit-content ;" href="">
+
+            <img class="img-fluid" src="../assets/icons/thumb up.svg" alt="thumb up icon">
+          </div>
+          <p class="fw-bolder text-uppercase text-center mb-0">SATISFIED
+          </p>
+          <p class="fw-bolder text-uppercase text-center">
+            CUSTOMERS</p>
+        </div>
+
+        <!-- a single item no 3 -->
+        <div class="col-6 col-lg-3 py-1">
+          <div class="d-block mx-auto my-3" style="width:fit-content ;" href="">
+
+            <img class="img-fluid" src="../assets/icons/award.svg" alt="award icon">
+          </div>
+          <p class="fw-bolder text-uppercase text-center mb-0">DAY QUALITY 
+            
+          </p>
+          <p class="fw-bolder text-uppercase text-center">
+            brands</p>
+        </div>
+
+        <!-- a single item no 4-->
+        <div class="col-6 col-lg-3 py-1">
+          <div class="d-block mx-auto my-3" style="width:fit-content ;" href="">
+
+            <img class="img-fluid" src="../assets/icons/key.svg" alt="key icon">
+          </div>
+          <p class="fw-bolder text-uppercase text-center mb-0">Dutch owned 
+            
+          </p>
+          <p class="fw-bolder text-uppercase text-center">
+            and run</p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Footer -->
+    <div class="container-fluid bg-primary text-white-50">
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 col-lg-3 text-center my-5">
+                <img class="opacity-50 " style="height: 80px ;" src="../assets/icons/logo.svg" alt="" srcset="">
+                <div class="mt-5 d-lg-none">
+                    <a class="text-decoration-none m-3" href="">
+
+                        <img src="../assets/icons/facebook.svg" alt="facebook" srcset="">
+                    </a>
+
+                    <a class="text-decoration-none m-3" href="">
+
+                        <img src="../assets/icons/instagram.svg" alt="instagram" srcset="">
+                    </a>
+                </div>
+            </div>
+            <hr class="d-lg-none">
+            <div class="col-12 col-lg-3 text-center text-lg-start my-5">
+                <h3 class="mb-5">Contact</h3>
+                <p class="mb-4"><small> info@sphaere B.V.</small> </p>
+
+                <p class="my-2"><small> Spaarndammerstraat 53-1 </small></p>
+                <p class="my-2"><small> Amsterdam 1013TA </small> </p>
+                <p class="my-2"><small> The Netherlamds </small></p>
+            </div>
+            <hr class="d-lg-none">
+            <!-- Need help section -->
+            <div class="col-12 col-lg-3 text-center text-lg-start my-5">
+                <h3 class="mb-5">Need help</h3>
+                <p class=""> <a class="text-decoration-none text-white-50" href="">QUALITY AND WARRANTY</a> </p>
+                <P class="my-4"><a class="text-decoration-none text-white-50 " href="">DELIVERY</a></P>
+                <P class="my-4"><a class="text-decoration-none text-white-50 " href="">TERMS OF USE</a></P>
+                <P class="my-4"><a class="text-decoration-none text-white-50 " href="">PRIVACY POLICY</a></P>
+                <P class="my-4"><a class="text-decoration-none text-white-50 " href="">CODE OF CONDUCT</a></P>
+                <P class="my-4"><a class="text-decoration-none text-white-50 " href="">CONTACT US</a></P>
+            </div>
+
+            <div class="col-12 col-lg-3 text-center my-5 d-none d-lg-block">
+                <h3 class="mb-5">Social</h3>
+                <div class=" d-none d-lg-block">
+                    <a class="text-decoration-none mx-2" href="">
+
+                        <img src="../assets/icons/facebook.svg" alt="facebook" srcset="">
+                    </a>
+
+                    <a class="text-decoration-none mx-2" href="">
+
+                        <img src="../assets/icons/instagram.svg" alt="facebook" srcset="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="d-flex justify-content-center flex-wrap">
+            <p class="mx-2">&copy 2020 Sphare.net All Right Reserved</p>
+            <p class="mx-2">Gemeente overlast: 204214567</p>
+            <p class="mx-2">KvK: 78264286</p>
+            <p class="mx-2">Vestigings:45906254</p>
+            <p class="mx-2">VAT: NL861323282B01</p>
+        </div>
+    </div>
+
+
+    <script>
+        function changeIcon() {
+            toggleIcon = document.getElementById("navbar-toggle-icon");
+            closeIcon = document.getElementById("navbar-close-icon");
+            sidebar = document.getElementsByClassName("offcanvas")[0]
+            if (toggleIcon.style.display != "none" && !sidebar.classList.contains("show")) {
+                toggleIcon.style.display = "none";
+                closeIcon.style.display = "block";
+            } else if (toggleIcon.style.display == "none" && sidebar.classList.contains("show")) {
+                toggleIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            }
+        }
+        let navbarButton = document.getElementById("navbar-toggle-button")
+        navbarButton.addEventListener("click", changeIcon)
+
+    </script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+</body>
+
+</html>
